@@ -14,14 +14,10 @@ eureka:
     fetchRegistry: 'false'
     registerWithEureka: 'false'
 spring:
-  config:
-    name: eureka
-  application:
-    name: api-registry-server
   boot:
     admin:
       client:
-        url: =http://192.168.0.11:8082
+        url: http://192.168.0.11:8082
 server:
   port: '8761'
 
