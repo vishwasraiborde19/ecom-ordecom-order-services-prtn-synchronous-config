@@ -1,15 +1,27 @@
-spring.config.name=eureka
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+eureka:
+  instance:
+    hostname: localhost
+    preferIpAddress: 'true'
+  client:
+    fetchRegistry: 'false'
+    registerWithEureka: 'false'
+spring:
+  config:
+    name: eureka
+  application:
+    name: api-registry-server
+  boot:
+    admin:
+      client:
+        url: =http://192.168.0.11:8082
+server:
+  port: '8761'
 
-spring.application.name=api-registry-server
-server.port = 8761
-spring.boot.admin.client.url==http://192.168.0.11:8082
-
-#eureka configuration
-eureka.client.registerWithEureka = false
-eureka.client.fetchRegistry = false
-eureka.instance.hostname=localhost
-eureka.instance.preferIpAddress=true
-
-# actuators
-management.endpoints.web.exposure.include=*
-management.endpoint.health.show-details=always
