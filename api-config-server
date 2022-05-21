@@ -11,3 +11,6 @@ management.endpoints.jmx.exposure.include=*
 management.endpoints.web.cors.allowed-origins=true 
 management.endpoint.health.show-details=always
 management.endpoints.web.exposure.include=*
+
+#admin module connection 
+spring.boot.admin.client.url=http://localhost:8082
